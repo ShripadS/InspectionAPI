@@ -12,12 +12,12 @@ namespace BAL.Service
     public class InspectionService
     {
         private readonly IRepository<Inspection> _inspection;
-        private readonly InspectorService _inspectorService;
+       
 
-        public InspectionService(IRepository<Inspection> inspection, InspectorService inspectorService)
+        public InspectionService(IRepository<Inspection> inspection)
         {
             _inspection = inspection;
-            _inspectorService = inspectorService;
+            
         }
         //Get Inspection Details by Date
         public List<Inspection> GetInspectionsByDate(string InspectionDate)            
