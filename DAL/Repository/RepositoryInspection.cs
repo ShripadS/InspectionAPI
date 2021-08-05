@@ -35,7 +35,7 @@ namespace DAL.Repository
         {
             try
             {
-                return _dbContext.Inspections.ToList();
+                return _dbContext.Inspections.Include(r=>r.Inspector).ToList();
             }
             catch (Exception ex)
             {

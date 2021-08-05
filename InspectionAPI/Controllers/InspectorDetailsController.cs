@@ -43,6 +43,26 @@ namespace InspectionAPI.Controllers
             }
         }
 
+
+        //Add Inspector
+        [HttpPost("AddInspectorWithValue")]
+        public async Task<Object> AddInspectorWithValues(string InspectorName, string InspectorEmail)
+        {
+            try
+            {
+                Inspector objInsp = new Inspector();
+                objInsp.Name = InspectorName;
+                objInsp.Email = InspectorEmail;
+                await _inspectorService.AddInspector(objInsp);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logs.AddLog(ex.Message + " Trace: " + ex.StackTrace);
+                return false;
+            }
+        }
+
         //Delete Inspector  
         [HttpDelete("DeleteInspector")]  
         public bool DeleteInspector(int id)  

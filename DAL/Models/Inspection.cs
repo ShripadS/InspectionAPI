@@ -23,7 +23,9 @@ namespace DAL.Models
         [ForeignKey("Inspector")]
         [Display(Name = "Inspector ID")]
         public int InspectorID { get; set; }
-     
+
+        public virtual Inspector Inspector { get; set; }
+
 
         [Required]
         [Display(Name = "Created On")]

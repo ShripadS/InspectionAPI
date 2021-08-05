@@ -33,5 +33,7 @@ namespace DAL.Models
         [Required]
         [Display(Name = "IsDeleted")]
         public bool IsDeleted { get; set; } = false;
+
+        
     }
 }
